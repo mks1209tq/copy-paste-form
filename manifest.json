@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Form Data Transfer",
+  "version": "1.0",
+  "description": "Transfers data from form1 to form2",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://tanseeq1209.test/form1*"],
+      "js": ["content.js"]
+    },
+    {
+      "matches": ["https://tanseeq1209.test/form2*"],
+      "js": ["form2.js"]
+    }
+  ],
+  "action": {}
+}
